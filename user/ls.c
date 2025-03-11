@@ -43,10 +43,14 @@ ls(char *path)
 
   switch(st.type){
   case T_FILE:
+    printf("ls: type T_FILE \n");
+
     printf("%s %d %d %l\n", fmtname(path), st.type, st.ino, st.size);
     break;
 
   case T_DIR:
+    printf("ls: type T_DIR %s  \n", path );
+
     if(strlen(path) + 1 + DIRSIZ + 1 > sizeof buf){
       printf("ls: path too long\n");
       break;
@@ -74,6 +78,7 @@ int
 main(int argc, char *argv[])
 {
   int i;
+  printf("ls: argv stat %s\n", argv[0]);
 
   if(argc < 2){
     ls(".");
