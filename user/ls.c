@@ -51,6 +51,7 @@ ls(char *path)
   case T_DIR:
     printf("ls: type T_DIR %s  \n", path );
 
+
     if(strlen(path) + 1 + DIRSIZ + 1 > sizeof buf){
       printf("ls: path too long\n");
       break;
