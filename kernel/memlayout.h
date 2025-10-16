@@ -65,3 +65,14 @@
 //   TRAPFRAME (p->trapframe, used by the trampoline)
 //   TRAMPOLINE (the same page as in the kernel)
 #define TRAPFRAME (TRAMPOLINE - PGSIZE)
+
+
+
+// #ifdef LAB_PGTBL
+#define USYSCALL (TRAPFRAME - PGSIZE) // data page for user syscall
+struct usyscall {
+  int pid; // for syscall tracing, need to know which process
+};
+// #endif
+
+
